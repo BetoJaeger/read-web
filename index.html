@@ -3,117 +3,216 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>READ · Resico Administrativo PF</title>
-<meta name="description" content="Sistema de escritorio para contadores: declaraciones de RESICO y Arrendamiento de personas físicas desde los XML del SAT.">
+<title>READ · Sistema para contadores RESICO y Arrendamiento</title>
+<meta name="description" content="Cierra el mes de toda tu cartera RESICO en una tarde. READ lee los XML del SAT, analiza gastos, calcula ISR, IVA y retenciones y genera el informe para tu cliente.">
+<meta name="theme-color" content="#1B2B56">
 <link rel="icon" href="img/icono.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&family=Public+Sans:wght@400;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<!-- Íconos (estilo Lucide), una sola vez -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15l2 2 4-4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  </defs>
+</svg>
+
 <header>
   <div class="contenedor">
-    <a href="./"><img src="img/logo-read.png" alt="READ · Resico Administrativo PF"></a>
-    <nav>
-      <a href="#que-hace">Qué hace</a>
-      <a href="#planes">Planes</a>
-      <a href="#seguridad">Seguridad</a>
-      <a href="#contacto">Contacto</a>
+    <a class="logo" href="./" aria-label="READ, inicio"><img src="img/logo-read.png" alt="READ · Resico Administrativo PF" width="136" height="40"></a>
+    <nav aria-label="Principal">
+      <a class="enlace" href="#que-hace">Qué hace</a>
+      <a class="enlace" href="#planes">Planes</a>
+      <a class="enlace" href="#seguridad">Seguridad</a>
+      <a class="enlace" href="#preguntas">Preguntas</a>
+      <a class="boton naranja" href="#contacto">Prueba gratis</a>
     </nav>
   </div>
 </header>
 
+<main id="contenido">
 <section class="portada">
   <div class="contenedor">
     <div>
-      <p class="etiqueta">Para contadores y despachos</p>
+      <span class="etiqueta">Para contadores y despachos</span>
       <h1>Cierra el mes de toda tu cartera RESICO en una tarde</h1>
-      <p>READ lee los XML del SAT, analiza los gastos, calcula ISR, IVA y retenciones, y te entrega el informe listo para tu cliente. RESICO y Arrendamiento de personas físicas.</p>
-      <p><a class="boton claro" href="#contacto">Pide tu prueba gratis</a></p>
+      <p class="lead">READ lee los XML del SAT, analiza los gastos, calcula ISR, IVA y retenciones, y te entrega el informe listo para tu cliente. RESICO y Arrendamiento de personas físicas.</p>
+      <div class="acciones">
+        <a class="boton naranja" href="#contacto">Pide tu prueba gratis de 15 días</a>
+        <a class="boton contorno" href="#planes">Ver planes</a>
+      </div>
+      <ul class="confianza">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>RFC ilimitados</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tus datos en tu computadora</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Funciona sin internet</li>
+      </ul>
     </div>
-    <img src="img/cierre-del-mes.png" alt="Pantalla «Cierre del mes» de READ con los clientes del despacho">
+    <img class="captura" src="img/cierre-del-mes.png" alt="Pantalla «Cierre del mes» de READ: todos los clientes del despacho con lo que pagan y lo que les falta" width="1440" height="900">
+  </div>
+</section>
+
+<section class="cifras" aria-label="READ en cifras">
+  <div class="contenedor">
+    <div class="cifra"><b>2</b><span>regímenes: RESICO y Arrendamiento</span></div>
+    <div class="cifra"><b>∞</b><span>clientes (RFC) sin costo extra</span></div>
+    <div class="cifra"><b>+880</b><span>pruebas automáticas de cálculo</span></div>
+    <div class="cifra"><b>15 días</b><span>de prueba con todo incluido</span></div>
   </div>
 </section>
 
 <section class="bloque" id="que-hace">
   <div class="contenedor">
-    <h2>Qué hace READ</h2>
+    <div class="encabezado">
+      <span class="etiqueta">Qué hace READ</span>
+      <h2>Del XML del SAT al informe para tu cliente</h2>
+      <p>Todo lo que haces en Excel cada mes, hecho y revisado en minutos.</p>
+    </div>
     <div class="rejilla">
-      <div class="tarjeta"><h3>Carga en un clic</h3><p>Los ZIP del SAT o XML revueltos: READ acomoda emitidos, recibidos, complementos de pago y nómina.</p></div>
-      <div class="tarjeta"><h3>Análisis de gastos</h3><p>Cada gasto con SÍ, NO o REVISAR según la ley, y READ aprende tus decisiones por proveedor.</p></div>
-      <div class="tarjeta"><h3>ISR, IVA y nómina</h3><p>Flujo de efectivo, retenciones de personas morales, saldos a favor, ISR retenido por salarios y ajustes a mano.</p></div>
-      <div class="tarjeta"><h3>Informe con tu logo</h3><p>Con tu firma, el desglose y la hoja lista para capturar en el portal del SAT. En PDF o Excel.</p></div>
-      <div class="tarjeta"><h3>Anual y recargos</h3><p>Declaración anual y calculadora de actualización y recargos con el INPC.</p></div>
-      <div class="tarjeta"><h3>Arrendamiento</h3><p>Mensual o trimestral, deducción ciega o deducciones reales, y su declaración anual.</p></div>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-upload"/></svg></div><h3>Carga en un clic</h3><p>Los ZIP del SAT o XML revueltos: READ acomoda emitidos, recibidos, complementos de pago y nómina.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-filter"/></svg></div><h3>Análisis de gastos</h3><p>Cada gasto con SÍ, NO o REVISAR según la ley, y READ aprende tus decisiones por proveedor.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-calc"/></svg></div><h3>ISR, IVA y nómina</h3><p>Flujo de efectivo, retenciones de personas morales, saldos a favor, ISR retenido por salarios y ajustes a mano.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-file"/></svg></div><h3>Informe con tu logo</h3><p>Con tu firma, el desglose y la hoja lista para capturar en el portal del SAT. En PDF o Excel.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><h3>Cierre del mes y anual</h3><p>Toda la cartera en una pantalla, declaración anual y calculadora de actualización y recargos.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-home"/></svg></div><h3>Arrendamiento</h3><p>Mensual o trimestral, deducción ciega o deducciones reales, y su declaración anual.</p></article>
     </div>
   </div>
 </section>
 
 <section class="bloque alterno">
-  <div class="contenedor dos">
-    <img src="img/cargar-xml.png" alt="Carga de XML en READ">
-    <div>
-      <h2>Hecho por un contador, para contadores</h2>
-      <p>READ nació de las necesidades reales de un despacho que lleva clientes RESICO todos los días. Cada cálculo está revisado contra la ley y probado con cientos de casos.</p>
-      <p>Funciona en tu computadora, aunque se caiga el internet.</p>
+  <div class="contenedor">
+    <div class="encabezado">
+      <span class="etiqueta">Cómo funciona</span>
+      <h2>Tres pasos cada mes</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso"><h3>Carga los XML</h3><p>Descarga del SAT los emitidos y recibidos de tu cliente y arrástralos a READ.</p></div>
+      <div class="paso"><h3>Revisa y ajusta</h3><p>Confirma los gastos marcados «REVISAR» y, si hace falta, ajusta a mano con su concepto.</p></div>
+      <div class="paso"><h3>Entrega el informe</h3><p>Guarda el PDF con tu logo y firma, y captura las cifras en el portal del SAT.</p></div>
     </div>
   </div>
 </section>
 
 <section class="bloque" id="planes">
   <div class="contenedor">
-    <h2>Planes</h2>
-    <p>Todos incluyen el sistema completo y RFC ilimitados. 15 días de prueba gratis.</p>
-    <div class="rejilla">
-      <div class="tarjeta plan destacado">
-        <h3>Básico</h3>
-        <div class="precio">$249</div>
-        <div class="nota">al mes + IVA</div>
-        <ul><li>1 computadora</li><li>RFC ilimitados</li><li>RESICO y Arrendamiento</li><li>Soporte por WhatsApp</li></ul>
-      </div>
-      <div class="tarjeta plan">
-        <h3>Plus</h3>
-        <div class="precio">$399</div>
-        <div class="nota">al mes + IVA</div>
-        <ul><li>Todo lo del Básico</li><li>2 computadoras</li><li>Soporte prioritario</li><li>1 hora de capacitación</li></ul>
-      </div>
-      <div class="tarjeta plan">
-        <h3>Despacho</h3>
-        <div class="precio">$699</div>
-        <div class="nota">al mes + IVA</div>
-        <ul><li>Todo lo del Plus</li><li>Hasta 5 computadoras</li><li>Capacitación del equipo</li><li>Ayuda para migrar clientes</li></ul>
-      </div>
+    <div class="encabezado">
+      <span class="etiqueta">Planes</span>
+      <h2>Todo el sistema en todos los planes</h2>
+      <p>Pagas por computadoras y atención, no por funciones. RFC ilimitados siempre.</p>
     </div>
-    <p class="nota">Pago anual: 12 meses por el precio de 10.</p>
+    <div class="planes">
+      <article class="plan destacado">
+        <span class="insignia">El más elegido</span>
+        <h3>Básico</h3>
+        <div class="precio">$249 <small>/mes + IVA</small></div>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>1 computadora</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>RFC ilimitados</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>RESICO y Arrendamiento</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Soporte por WhatsApp</li>
+        </ul>
+        <a class="boton" href="#contacto">Empezar prueba gratis</a>
+      </article>
+      <article class="plan">
+        <h3>Plus</h3>
+        <div class="precio">$399 <small>/mes + IVA</small></div>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Todo lo del Básico</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>2 computadoras</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Soporte prioritario</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>1 hora de capacitación</li>
+        </ul>
+        <a class="boton" href="#contacto">Empezar prueba gratis</a>
+      </article>
+      <article class="plan">
+        <h3>Despacho</h3>
+        <div class="precio">$699 <small>/mes + IVA</small></div>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Todo lo del Plus</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hasta 5 computadoras</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Capacitación del equipo</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ayuda para migrar clientes</li>
+        </ul>
+        <a class="boton" href="#contacto">Empezar prueba gratis</a>
+      </article>
+    </div>
+    <p class="nota" style="margin-top:16px">Pago anual: 12 meses por el precio de 10 (Básico: $2,490 al año + IVA).</p>
+
+    <div class="pago" aria-labelledby="titulo-pago">
+      <div class="texto">
+        <svg aria-hidden="true"><use href="#i-lock"/></svg>
+        <div><b id="titulo-pago" style="color:var(--tinta)">Pago seguro con Stripe.</b> Tarjeta de crédito o débito, o en efectivo en OXXO. Tus datos de tarjeta los recibe Stripe; nosotros no los guardamos.</div>
+      </div>
+      <ul class="metodos" aria-label="Métodos de pago aceptados">
+        <li aria-label="Visa"><svg viewBox="0 0 60 20" aria-hidden="true"><text x="30" y="16" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-style="italic" font-size="17" fill="#1A1F71">VISA</text></svg></li>
+        <li aria-label="Mastercard"><svg viewBox="0 0 38 24" aria-hidden="true"><circle cx="14" cy="12" r="10" fill="#EB001B"/><circle cx="24" cy="12" r="10" fill="#F79E1B"/><path d="M19 3.3a10 10 0 0 1 0 17.4 10 10 0 0 1 0-17.4z" fill="#FF5F00"/></svg></li>
+        <li aria-label="American Express"><svg viewBox="0 0 56 20" aria-hidden="true"><rect width="56" height="20" rx="3" fill="#1F72CD"/><text x="28" y="14.5" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#fff">AMEX</text></svg></li>
+        <li aria-label="OXXO"><svg viewBox="0 0 56 20" aria-hidden="true"><rect width="56" height="20" rx="3" fill="#E5202E"/><rect y="2" width="56" height="2" fill="#F9C900"/><rect y="16" width="56" height="2" fill="#F9C900"/><text x="28" y="14" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="10" fill="#fff">OXXO</text></svg></li>
+        <li aria-label="Stripe"><svg viewBox="0 0 60 24" aria-hidden="true"><text x="30" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#635BFF">stripe</text></svg></li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section class="bloque alterno" id="seguridad">
   <div class="contenedor">
-    <h2>Tus datos se quedan contigo</h2>
+    <div class="encabezado">
+      <span class="etiqueta">Seguridad</span>
+      <h2>Tus datos se quedan contigo</h2>
+    </div>
     <div class="rejilla">
-      <div class="tarjeta"><h3>En tu computadora</h3><p>Los XML, cálculos e informes de tus clientes se guardan solo en tu computadora. No suben a ningún servidor.</p></div>
-      <div class="tarjeta"><h3>Cifrados</h3><p>Toda la información va cifrada, con un código de recuperación que solo tú tienes.</p></div>
-      <div class="tarjeta"><h3>Tu cuenta, solo para la licencia</h3><p>Entras con Google; a la nube solo va tu cuenta y tu licencia, nunca datos fiscales.</p></div>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-monitor"/></svg></div><h3>En tu computadora</h3><p>Los XML, cálculos e informes de tus clientes se guardan solo en tu computadora. No suben a ningún servidor.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-shield"/></svg></div><h3>Cifrados</h3><p>Toda la información va cifrada, con un código de recuperación que solo tú tienes.</p></article>
+      <article class="tarjeta"><div class="icono"><svg aria-hidden="true"><use href="#i-user"/></svg></div><h3>Tu cuenta, solo para la licencia</h3><p>Entras con Google; a la nube solo va tu cuenta y tu licencia, nunca datos fiscales.</p></article>
     </div>
   </div>
 </section>
 
-<section class="bloque" id="contacto">
-  <div class="contenedor">
-    <h2>Pide tu prueba gratis</h2>
-    <p>Escríbenos y te mandamos el instalador para Windows con 15 días de prueba.</p>
-    <p>
-      <a class="boton" href="mailto:albertovalenzuela78@gmail.com"><a href="mailto:albertovalenzuela78@gmail.com">albertovalenzuela78@gmail.com</a></a>
-      &nbsp;
-      <a class="boton claro" href="https://wa.me/526672014194">WhatsApp 667 201 4194</a>
-    </p>
+<section class="bloque" id="preguntas">
+  <div class="contenedor preguntas">
+    <div class="encabezado">
+      <span class="etiqueta">Preguntas frecuentes</span>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <details><summary>¿Necesito internet para usar READ?</summary><p>No para trabajar: READ funciona en tu computadora. Se conecta de vez en cuando para revisar tu licencia y, si tú lo pides, para verificar comprobantes con el SAT. Puede trabajar hasta 14 días seguidos sin internet.</p></details>
+    <details><summary>¿Dónde se guardan los datos de mis clientes?</summary><p>Solo en tu computadora, cifrados. READ hace copias automáticas y puedes exportar respaldos cuando quieras.</p></details>
+    <details><summary>¿Cuántos clientes puedo llevar?</summary><p>Los que quieras: todos los planes tienen RFC ilimitados.</p></details>
+    <details><summary>¿Qué pasa cuando termina la prueba?</summary><p>READ queda en modo consulta: ves, imprimes y exportas tu información, pero no cargas ni modificas nada hasta activar tu plan. No pierdes nada.</p></details>
+    <details><summary>¿Cómo pago?</summary><p>Con tarjeta de crédito o débito, o en efectivo en OXXO, a través de Stripe. Puedes pagar mes a mes o el año completo con dos meses de regalo.</p></details>
+    <details><summary>¿En qué computadoras funciona?</summary><p>En computadoras con Windows 10 u 11.</p></details>
   </div>
 </section>
 
+<section class="final" id="contacto">
+  <div class="contenedor">
+    <h2>Pide tu prueba gratis de 15 días</h2>
+    <p>Escríbenos y te mandamos el instalador para Windows con todo incluido.</p>
+    <div class="acciones">
+      <a class="boton naranja" href="https://wa.me/526672014194?text=Hola%2C%20quiero%20probar%20READ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp 667 201 4194</a>
+      <a class="boton contorno" href="mailto:albertovalenzuela78@gmail.com?subject=Quiero%20probar%20READ">Escríbenos por correo</a>
+    </div>
+  </div>
+</section>
+</main>
+
 <footer>
   <div class="contenedor">
-    <div>READ · Resico Administrativo PF · © 2026</div>
+    <div>READ · Resico Administrativo PF · © 2026 · Culiacán, Sinaloa</div>
     <div><a href="privacidad.html">Aviso de privacidad</a> · <a href="terminos.html">Términos y condiciones</a></div>
   </div>
 </footer>
