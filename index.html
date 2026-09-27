@@ -113,50 +113,63 @@
     <div class="encabezado">
       <span class="etiqueta">Planes</span>
       <h2>Todo el sistema en todos los planes</h2>
-      <p>Pagas por computadoras y atención, no por funciones. RFC ilimitados siempre.</p>
+      <p>Pagas por computadoras y atención, no por funciones. RFC ilimitados siempre. Precios finales: el IVA ya está incluido.</p>
+    </div>
+    <div class="periodo" role="group" aria-label="Forma de pago">
+      <button type="button" data-periodo="mensual" aria-pressed="true">Mensual</button>
+      <button type="button" data-periodo="anual" aria-pressed="false">Anual <span>2 meses gratis</span></button>
     </div>
     <div class="planes">
       <article class="plan destacado">
         <span class="insignia">El más elegido</span>
         <h3>Básico</h3>
-        <div class="precio">$249 <small>/mes + IVA</small></div>
+        <div class="precio" data-mensual="$249" data-anual="$2,490">$249 <small>/mes</small></div>
+        <p class="iva">IVA incluido</p>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>1 computadora</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>RFC ilimitados</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Todo el sistema RESICO</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Soporte por WhatsApp</li>
         </ul>
-        <a class="boton" href="#contacto">Empezar prueba gratis</a>
+        <a class="boton" href="https://buy.stripe.com/test_cNiaEW2Na8lndGWbc69ws06" data-mensual="https://buy.stripe.com/test_cNiaEW2Na8lndGWbc69ws06" data-anual="https://buy.stripe.com/test_00w5kCbjG313fP44NI9ws07">Contratar Básico</a>
+        <a class="oxxo" href="https://buy.stripe.com/test_14A4gycnKfNP5aq2FA9ws08" hidden>o paga el año en efectivo en OXXO</a>
+        <a class="prueba" href="#contacto">o pruébalo 15 días gratis</a>
       </article>
       <article class="plan">
         <h3>Plus</h3>
-        <div class="precio">$399 <small>/mes + IVA</small></div>
+        <div class="precio" data-mensual="$399" data-anual="$3,990">$399 <small>/mes</small></div>
+        <p class="iva">IVA incluido</p>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Todo lo del Básico</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>2 computadoras</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Soporte prioritario</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>1 hora de capacitación</li>
         </ul>
-        <a class="boton" href="#contacto">Empezar prueba gratis</a>
+        <a class="boton" href="https://buy.stripe.com/test_bJe5kC2Nabxz6eu1Bw9ws09" data-mensual="https://buy.stripe.com/test_bJe5kC2Nabxz6eu1Bw9ws09" data-anual="https://buy.stripe.com/test_fZuaEWafC59bdGWeoi9ws0a">Contratar Plus</a>
+        <a class="oxxo" href="https://buy.stripe.com/test_00w14m0F2eJL32ifsm9ws0b" hidden>o paga el año en efectivo en OXXO</a>
+        <a class="prueba" href="#contacto">o pruébalo 15 días gratis</a>
       </article>
       <article class="plan">
         <h3>Despacho</h3>
-        <div class="precio">$699 <small>/mes + IVA</small></div>
+        <div class="precio" data-mensual="$699" data-anual="$6,990">$699 <small>/mes</small></div>
+        <p class="iva">IVA incluido</p>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Todo lo del Plus</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hasta 5 computadoras</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Capacitación del equipo</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ayuda para migrar clientes</li>
         </ul>
-        <a class="boton" href="#contacto">Empezar prueba gratis</a>
+        <a class="boton" href="https://buy.stripe.com/test_9B6dR81J6dFHgT84NI9ws0c" data-mensual="https://buy.stripe.com/test_9B6dR81J6dFHgT84NI9ws0c" data-anual="https://buy.stripe.com/test_6oU14mbjG1WZ7iya829ws0d">Contratar Despacho</a>
+        <a class="oxxo" href="https://buy.stripe.com/test_00w00ifzWbxz1Ye2FA9ws0e" hidden>o paga el año en efectivo en OXXO</a>
+        <a class="prueba" href="#contacto">o pruébalo 15 días gratis</a>
       </article>
     </div>
-    <p class="nota" style="margin-top:16px">Pago anual: 12 meses por el precio de 10 (Básico: $2,490 al año + IVA).</p>
+    <p class="nota" style="margin-top:16px">Pago anual: 12 meses por el precio de 10. Con tarjeta se renueva solo y puedes cancelar cuando quieras; en OXXO pagas el año una sola vez.</p>
 
     <div class="pago" aria-labelledby="titulo-pago">
       <div class="texto">
         <svg aria-hidden="true"><use href="#i-lock"/></svg>
-        <div><b id="titulo-pago" style="color:var(--tinta)">Pago seguro con Stripe.</b> Tarjeta de crédito o débito, o en efectivo en OXXO. Tus datos de tarjeta los recibe Stripe; nosotros no los guardamos.</div>
+        <div><b id="titulo-pago" style="color:var(--tinta)">Pago seguro con Stripe.</b> Tarjeta de crédito o débito, o en efectivo en OXXO (pago anual). Tus datos de tarjeta los recibe Stripe; nosotros no los guardamos.</div>
       </div>
       <ul class="metodos" aria-label="Métodos de pago aceptados">
         <li aria-label="Visa"><svg viewBox="0 0 60 20" aria-hidden="true"><text x="30" y="16" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-style="italic" font-size="17" fill="#1A1F71">VISA</text></svg></li>
@@ -193,7 +206,7 @@
     <details><summary>¿Dónde se guardan los datos de mis clientes?</summary><p>Solo en tu computadora, cifrados. READ hace copias automáticas y puedes exportar respaldos cuando quieras.</p></details>
     <details><summary>¿Cuántos clientes puedo llevar?</summary><p>Los que quieras: todos los planes tienen RFC ilimitados.</p></details>
     <details><summary>¿Qué pasa cuando termina la prueba?</summary><p>READ queda en modo consulta: ves, imprimes y exportas tu información, pero no cargas ni modificas nada hasta activar tu plan. No pierdes nada.</p></details>
-    <details><summary>¿Cómo pago?</summary><p>Con tarjeta de crédito o débito, o en efectivo en OXXO, a través de Stripe. Puedes pagar mes a mes o el año completo con dos meses de regalo.</p></details>
+    <details><summary>¿Cómo pago?</summary><p>Con tarjeta de crédito o débito, a través de Stripe: mes a mes o el año completo con dos meses de regalo. Si prefieres efectivo, el pago anual también se puede hacer en OXXO. Los precios ya incluyen IVA.</p></details>
     <details><summary>¿En qué computadoras funciona?</summary><p>En computadoras con Windows 10 u 11.</p></details>
   </div>
 </section>
@@ -216,5 +229,34 @@
     <div><a href="privacidad.html">Aviso de privacidad</a> · <a href="terminos.html">Términos y condiciones</a></div>
   </div>
 </footer>
+<script>
+// Mensual / Anual: cambia precios y ligas de pago; OXXO solo en anual (Stripe no lo acepta en suscripciones)
+(function () {
+  var botones = document.querySelectorAll('.periodo button');
+  function elegir(periodo) {
+    botones.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.periodo === periodo)); });
+    document.querySelectorAll('.precio').forEach(function (p) {
+      p.firstChild.textContent = p.dataset[periodo] + ' ';
+      p.querySelector('small').textContent = periodo === 'anual' ? '/año' : '/mes';
+    });
+    document.querySelectorAll('.plan .boton').forEach(function (a) { a.href = a.dataset[periodo]; });
+    document.querySelectorAll('.plan .oxxo').forEach(function (a) { a.hidden = periodo !== 'anual'; });
+  }
+  botones.forEach(function (b) { b.addEventListener('click', function () { elegir(b.dataset.periodo); }); });
+
+  // Regreso desde Stripe
+  var pago = new URLSearchParams(location.search).get('pago');
+  if (pago === 'ok' || pago === 'oxxo') {
+    var aviso = document.createElement('div');
+    aviso.className = 'aviso-pago';
+    aviso.setAttribute('role', 'status');
+    aviso.innerHTML = pago === 'ok'
+      ? '<b>¡Gracias por tu pago!</b> Te escribimos a tu correo para activar tu licencia de READ.'
+      : '<b>¡Listo!</b> Paga tu ficha en cualquier OXXO. Cuando se acredite (hasta 1 día hábil) te escribimos para activar tu licencia.';
+    document.body.insertBefore(aviso, document.querySelector('header'));
+    history.replaceState(null, '', location.pathname);
+  }
+})();
+</script>
 </body>
 </html>
