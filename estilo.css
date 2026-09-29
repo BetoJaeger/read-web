@@ -111,6 +111,9 @@ section.bloque.alterno { background: var(--fondo-2); }
 .plan .iva { margin: 0; font-size: 14px; font-weight: 600; color: var(--verde); }
 .plan .oxxo, .plan .prueba { display: block; text-align: center; margin-top: 12px; font-size: 15px; font-weight: 600; padding: 6px 0; text-underline-offset: 3px; }
 .plan .oxxo[hidden] { display: none; }
+.plan .oferta { margin: 10px 0 0; padding: 8px 12px; border-radius: 10px; background: #FDF1E6; color: var(--acento); font-size: 14px; font-weight: 600; line-height: 1.4; }
+.plan .oferta b { font-weight: 800; }
+.plan .oferta[hidden] { display: none; }
 .plan .prueba { color: var(--tenue); font-weight: 500; margin-top: 4px; }
 .periodo { display: flex; width: fit-content; margin: 0 auto 32px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 999px; padding: 4px; }
 .periodo button { font: inherit; font-weight: 700; font-size: 15px; color: var(--texto); background: transparent; border: 0; border-radius: 999px; min-height: 44px; padding: 8px 20px; cursor: pointer; transition: background var(--transicion), color var(--transicion); }
@@ -167,6 +170,8 @@ footer .contenedor { display: flex; justify-content: space-between; gap: 16px 24
   body { font-size: 16px; }
   section.bloque { padding: 56px 0; }
   .rejilla, .planes, .pasos { grid-template-columns: 1fr; }
+  .periodo button { line-height: 1.2; }
+  .periodo button span { display: block; margin-left: 0; }
   .portada { padding: 44px 0 52px; }
   .acciones .boton { width: 100%; }
   header .logo img { height: 34px; }
