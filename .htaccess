@@ -28,4 +28,9 @@ RewriteRule ^terminos/?$ terminos.html [L]
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
   Header always set Strict-Transport-Security "max-age=31536000"
+  # Páginas, estilos y scripts: el navegador pregunta si cambiaron en cada visita (así cada git push se ve
+  # de inmediato); las imágenes sí se guardan una semana.
+  <FilesMatch "\.(html|css|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
