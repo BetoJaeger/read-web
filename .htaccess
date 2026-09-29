@@ -33,8 +33,8 @@ RewriteRule ^gracias-oxxo/?$ gracias-oxxo.html [L]
 # Paquete de instalación de READ (repositorio público BetoJaeger/read-descargas): .zip con el instalador, el
 # Manual de uso y la Guía de instalación (lo arma app/tools/armar-paquete.mjs). Temporal (302) para cambiarlo en
 # cada versión nueva: solo se actualiza la versión aquí; la liga de los correos y del panel no cambia.
-RewriteRule ^descargar/?$ https://github.com/BetoJaeger/read-descargas/releases/download/v1.1.1/READ-1.1.1.zip [R=302,L]
-RewriteRule ^manual/?$ https://github.com/BetoJaeger/read-descargas/releases/download/v1.1.1/READ-Manual-de-uso-1.1.1.pdf [R=302,L]
+RewriteRule ^descargar/?$ https://github.com/BetoJaeger/read-descargas/releases/download/v1.2.0/READ-1.2.0.zip [R=302,L]
+RewriteRule ^manual/?$ https://github.com/BetoJaeger/read-descargas/releases/download/v1.2.0/READ-Manual-de-uso-1.2.0.pdf [R=302,L]
 
 <IfModule mod_headers.c>
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://buy.stripe.com; frame-ancestors 'none'; upgrade-insecure-requests"
