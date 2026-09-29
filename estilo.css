@@ -123,6 +123,18 @@ section.bloque.alterno { background: var(--fondo-2); }
 .periodo button:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
 .aviso-pago { background: #E6F4EC; color: #14532D; border-bottom: 1px solid #B7DFC7; padding: 14px 20px; text-align: center; font-size: 16px; }
 
+/* Aviso de bienvenida al abrir la página */
+.bienvenida { border: 0; padding: 0; border-radius: 20px; width: min(440px, calc(100% - 32px)); background: var(--tinta); color: #C9D2E3; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); text-align: center; }
+.bienvenida::backdrop { background: rgba(19, 32, 63, .55); backdrop-filter: blur(3px); }
+.bienvenida .caja { position: relative; padding: 40px 28px 28px; background: radial-gradient(circle at 85% 0%, #2C4585 0, var(--tinta) 60%); }
+.bienvenida .sello { display: inline-grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; background: var(--acento-claro); color: var(--tinta); font-size: 34px; font-weight: 800; line-height: 1; margin-bottom: 16px; transform: rotate(-8deg); }
+.bienvenida h2 { color: var(--fondo); font-size: clamp(24px, 6vw, 30px); margin-bottom: 10px; }
+.bienvenida p { font-size: 16px; margin-bottom: 22px; }
+.bienvenida .boton { width: 100%; }
+.bienvenida .ahora-no { display: block; width: 100%; margin-top: 8px; min-height: 44px; background: none; border: 0; color: #C9D2E3; font: inherit; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.bienvenida .cerrar { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(247, 246, 242, .10); color: var(--fondo); font-size: 26px; line-height: 1; cursor: pointer; }
+.bienvenida .cerrar:hover { background: rgba(247, 246, 242, .20); }
+
 /* Métodos de pago */
 .pago { margin-top: 28px; background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; }
 .pago .texto { display: flex; align-items: center; gap: 12px; max-width: 520px; }
