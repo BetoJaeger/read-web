@@ -21,6 +21,15 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteRule ^privacidad/?$ privacidad.html [L]
 RewriteRule ^terminos/?$ terminos.html [L]
 
+# Regreso de Stripe (las ligas de pago mandan a /?pago=ok o /?pago=oxxo): página de «Gracias» con los pasos
+# que siguen, en vez de solo un aviso en la portada.
+RewriteCond %{QUERY_STRING} (^|&)pago=ok(&|$)
+RewriteRule ^$ /gracias [R=302,L,QSD]
+RewriteCond %{QUERY_STRING} (^|&)pago=oxxo(&|$)
+RewriteRule ^$ /gracias-oxxo [R=302,L,QSD]
+RewriteRule ^gracias/?$ gracias.html [L]
+RewriteRule ^gracias-oxxo/?$ gracias-oxxo.html [L]
+
 # Paquete de instalación de READ (repositorio público BetoJaeger/read-descargas): .zip con el instalador, el
 # Manual de uso y la Guía de instalación (lo arma app/tools/armar-paquete.mjs). Temporal (302) para cambiarlo en
 # cada versión nueva: solo se actualiza la versión aquí; la liga de los correos y del panel no cambia.
