@@ -21,6 +21,10 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteRule ^privacidad/?$ privacidad.html [L]
 RewriteRule ^terminos/?$ terminos.html [L]
 
+# Instalador de READ (repositorio público BetoJaeger/read-descargas). Temporal (302) para cambiarlo en cada
+# versión nueva: solo se actualiza el nombre del archivo aquí; la liga de los correos y del panel no cambia.
+RewriteRule ^descargar/?$ https://github.com/BetoJaeger/read-descargas/releases/download/v1.1.1/READ-Instalador-1.1.1.exe [R=302,L]
+
 <IfModule mod_headers.c>
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://buy.stripe.com; frame-ancestors 'none'; upgrade-insecure-requests"
   Header always set X-Content-Type-Options "nosniff"
