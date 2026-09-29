@@ -11,7 +11,7 @@
     });
     document.querySelectorAll('.plan .boton').forEach(function (a) { a.href = a.dataset[periodo]; });
     document.querySelectorAll('.plan .oxxo').forEach(function (a) { a.hidden = periodo !== 'anual'; });
-    // Descuento de bienvenida (50 % los primeros 3 meses): solo en el plan mensual
+    // Descuento de bienvenida (20 % el primer mes, primera compra): solo en el plan mensual
     document.querySelectorAll('.plan .oferta').forEach(function (p) { p.hidden = periodo !== 'mensual'; });
   }
   botones.forEach(function (b) { b.addEventListener('click', function () { elegir(b.dataset.periodo); }); });
